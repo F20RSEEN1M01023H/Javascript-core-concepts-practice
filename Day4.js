@@ -46,3 +46,31 @@ const getStudentResultAsync = async () => {
     }
 }
 getStudentResultAsync();
+
+const registerUser = new Promise((resolve, reject) => {
+    const username = "Hammad";
+
+    if (username.length >= 5) {
+        resolve("User Registered Successfully!")
+    }
+    else {
+        reject("User Registeration Failed! Username is too short")
+    }
+})
+
+registerUser
+    .then((message) => console.log(message))
+    .catch((error) => console.log(error)
+    )
+
+
+const checkStock = new Promise((resolve, reject) => {
+    const stock = 15;
+    if (stock > 0) {
+        resolve("Products are available!")
+    }
+    else {
+        reject("Products are out of stock!")
+    }
+})
+
