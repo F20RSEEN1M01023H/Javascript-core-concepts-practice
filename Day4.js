@@ -74,3 +74,14 @@ const checkStock = new Promise((resolve, reject) => {
     }
 })
 
+const showName = ()=>{
+    console.log("Hammad is here");
+    
+}
+setTimeout(showName,5000)
+
+const showNameAfterFive = ()=>{
+    console.log("Hammad is here");
+    
+}
+// setInterval(showName,5000)
