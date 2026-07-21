@@ -53,3 +53,59 @@ if (isRaining) {
 
 
 // Problems 
+// A mobile phone has battery percentage.
+let batteryPercentage = 15;
+// If the battery is less than 20%, print:
+if (batteryPercentage < 20) {
+    console.log("Battery low please charge it!");
+
+}
+
+// A user enters their age.
+
+// If age is 18 or above:
+
+const userAge = 20;
+if (userAge >= 18) {
+    console.log("Driving License Eligible ")
+} else {
+    console.log("Not Eligible");
+
+}
+
+const stduentMarks = 70;
+
+if (stduentMarks >= 90) {
+    console.log("A+");
+
+} else if (stduentMarks >= 80) {
+    console.log("B+");
+
+} else if (stduentMarks >= 70) {
+    console.log("C");
+
+} else if (stduentMarks >= 60) {
+    console.log("D");
+
+} else {
+    console.log("Fail");
+
+}
+
+// A user wants to enter an exam hall.
+
+// Rules:
+
+// First, check if the user has an admit card.
+// If yes, then check whether they have an ID card.
+// If both are available:
+
+const admitCard = true;
+const idCard = true;
+
+if (admitCard) {
+    if (idCard) {
+        console.log("Yes you are eligible to go to exam hall!");
+
+    }
+}
