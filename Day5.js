@@ -109,3 +109,29 @@ if (admitCard) {
 
     }
 }
+
+const number = 65;
+
+console.log(number > 0 ? "Positive" : "Negative");
+
+// SWITCH 
+// A variable contains the traffic light color.
+
+const trafficLight = "Umer";
+
+switch(trafficLight){
+    case "Red":
+        console.log("Stop!");
+        break;
+
+    case "Yellow":
+        console.log("Get Ready");
+        break;
+        
+        case "Green":
+        console.log("Go");
+        break;
+    default:
+        console.log("Invalid Signal !");
+        
+}
