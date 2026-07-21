@@ -179,8 +179,82 @@
 // } while (i < 4)
 
 
-const fruits = ["Apple","Mango","Banana"];
+// const fruits = ["Apple","Mango","Banana"];
 
-for(const fruit of fruits){
-    console.log(fruit);
-}
+// for(const fruit of fruits){
+//     console.log(fruit);
+// }
+
+// const user = {
+//     name: "Hammad",
+//     age: 23
+// };
+
+// for(const key in user){
+//     console.log(key);
+
+// }
+
+
+// break 
+// for (let i = 1; i <= 10; i++) {
+//     if (i === 6) {
+//         break
+//     }
+//     console.log(i);
+    
+
+//continue
+// for (let i = 1; i <= 5; i++) {
+//     if (i === 3) {
+//         continue
+//     }
+//     console.log(i);
+    
+// }
+
+// for of 
+
+// const colors = ["Red", "Green", "Blue"];
+
+// for(const color of colors){
+//     console.log(`Color: ${color}`);
+    
+// }
+
+// Arrays 
+// const numbers4 = [5, 10, 15, 20, 25];
+
+// for(const num of numbers4){
+//     console.log(num *2);
+    
+// }
+
+
+// for(let i=1; i<=20; i++){
+//     if(i%2===0){
+//         console.log(`${i} is Even`);
+//     }
+//     else{
+//         console.log(`${i} is Odd`)
+//     }
+    
+// }
+
+// let i=10;
+// while(i>=1){
+//     console.log(i);
+//     i--;
+// }
+
+
+const prices = [500, 1200, 300, 1500, 700];
+
+let count=0;
+for(const price of prices){
+    if(price > 1000){
+        count++;
+    }
+    
+    
+}console.log(count);
