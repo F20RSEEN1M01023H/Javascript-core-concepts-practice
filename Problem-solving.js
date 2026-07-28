@@ -146,14 +146,14 @@ const countChar = (str, char) => {
     return repeatedChar;
 }
 
-console.log(countChar("Hammad Ashraf","s"));
+console.log(countChar("Hammad Ashraf", "s"));
 
 
 // 10. Star Triangle
 // Write printTriangle(rows) that prints a left-aligned triangle of stars
 
-const printTriangle=(rows)=>{
-    for(let i=1; i<=rows; i++){
+const printTriangle = (rows) => {
+    for (let i = 1; i <= rows; i++) {
         console.log("*".repeat(i));
     }
 }
@@ -167,6 +167,53 @@ printTriangle(6)
 
 // Problem 1 (Easy → Medium)
 // Password Strength Checker
-const passwordStrength(password){
-    if(password.length)
+const passwordStrength = (password) => {
+
+    if (password.length >= 8) {
+        return "Strong";
+    } if (password.length >= 5 && password.length <= 7) {
+        return "Medium";
+    } else {
+        return "Weak";
+    }
+
 }
+console.log(passwordStrength("hAMGHJD"));
+
+
+const countEvens = (numbers) => {
+    let count = 0;
+    for (const num of numbers) {
+        if (num % 2 === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countEvens([1, 2, 4, 5, 7, 8, 9, 45, 66, 78, 90]));
+
+
+const findLongestWord = (sentence) => {
+    const words = sentence.split(" ");
+    let bigWord = words[0];
+    for (const word of words) {
+        if (word.length > bigWord.length) {
+            bigWord = word
+        }
+    }
+    return bigWord
+}
+console.log(findLongestWord("I am learning JavaScript every day"));
+
+const removeDuplicates = (numbers) => {
+    let actualArray = []
+    for (const num of numbers) {
+        if (actualArray.includes(num)=== false) {
+            actualArray.push(num)
+        }
+
+    }
+    return actualArray
+
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5, 1]));
