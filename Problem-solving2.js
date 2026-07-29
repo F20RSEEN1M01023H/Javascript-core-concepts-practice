@@ -123,3 +123,8 @@ const tagsCount = (tags2) => tags2.reduce((counts, tag) => {
 console.log(tagsCount(tags2));
 
 
+
+// 4. Remove Duplicates
+
+const removeDuplicates = (ids) =>  [...new Set(ids)]
+console.log(removeDuplicates([1,3,4,6,5,6,3,4]));
