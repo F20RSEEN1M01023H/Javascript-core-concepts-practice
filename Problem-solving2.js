@@ -92,5 +92,34 @@ console.log(cartTotal(cart2));
 
 
 // 2. Group Students by Grade
+const students2 = [
+    { name: "Rizwan", grade: "A" },
+    { name: "Hafsa", grade: "A" },
+    { name: "Ibrahim", grade: "B" },
+    { name: "Zakariya", grade: "C" },
+    { name: "Ayesha", grade: "B" },
+];
+
+// groupByGrade(students);
+// { A: ["Rizwan", "Hafsa"], B: ["Ibrahim", "Ayesha"], C: ["Zakariya"] }
+
+const groupStudents = (students2) => students2.reduce((groups, student) => {
+    (groups[student.grade] ??= []).push(student.name)
+    return groups
+}, {});
+
+console.log(groupStudents(students));
+
+// 3. Word Frequency Count
+
+const tags2 = ["api", "db", "api", "cache", "db", "api"];
+
+// countTags(tags); // { api: 3, db: 2, cache: 1 }
+
+const tagsCount = (tags2) => tags2.reduce((counts, tag) => {
+    counts[tag] = (counts[tag] ?? 0) + 1;
+    return counts;
+}, {});
+console.log(tagsCount(tags2));
 
 
