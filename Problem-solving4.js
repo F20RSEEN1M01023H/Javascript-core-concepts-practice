@@ -116,7 +116,41 @@ console.log(finalPrice(6500));
 
 //************************************************** */ Async Problems***************************
 
-1. Build a delay Function
-Write delay(ms) that returns a promise which resolves after ms milliseconds, then use it to pause between two log statements.
+// 1. Build a delay Function
+// Write delay(ms) that returns a promise which resolves after ms milliseconds, then use it to pause between two log statements.
 
-Example
+const delay=(ms)=>new Promise((resolve)=> setTimeout(resolve,ms));
+
+const confirmOrder= async()=>{ console.log("order Placed");
+    await delay(1000);
+    console.log("Order Confirmed");
+
+    
+}
+confirmOrder()
+
+
+// 2. Sequential vs Parallel 
+
+const loadSequential = async () => {
+  console.time("sequential");
+  const user = await fetchUser();
+  const orders = await fetchOrders();
+  console.timeEnd("sequential"); // sequential: ~2000ms
+  return { user, orders };
+};
+
+const loadParallel = async () => {
+  console.time("parallel");
+  const [user, orders] = await Promise.all([fetchUser(), fetchOrders()]);
+  console.timeEnd("parallel"); // parallel: ~1000ms
+  return { user, orders };
+};
+
+const fetchUser = () => delay(1000).then(() => ({ name: "Rizwan" }));
+const fetchOrders = () => delay(1000).then(() => [{ id: 1, total: 6120 }]);
+
+// sequential: ~2000ms
+// parallel:   ~1000ms
+ console.log( fetchUser(1000));
+   
