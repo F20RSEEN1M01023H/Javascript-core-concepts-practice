@@ -14,3 +14,35 @@ withTimeout(slowApi, 2000)
 
 
 // Problem #4
+// 4. Retry with Backoff
+
+const delay=(ms)=> new Promise((resolve)=> setTimeout(resolve,ms))
+
+const retry = async(fn,retries=3, wait=500)=>{
+    for(let attempt=1; attempt<=retries; attempt++)
+    {
+        try{
+            return await fn();
+        }
+        catch(error){
+            if(attempt === retries){
+                throw error;  
+            }
+            console.log(`Attempt ${attempt} failed. Retrying in ${wait}ms...`);
+            await delay(wait);
+            wait *= 2;
+
+        }
+    }
+}
+let calls =0;
+const flakyApi = async()=>{
+    calls++;
+    if(calls <3){
+        throw new Error ("Service Unavailable")
+    }
+    return connected;
+}
+retry(flakyApi, 3, 500)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error.message));
